@@ -18,7 +18,7 @@ version="0.0.1">
 	</js-module>
 	<platform name="android">
 		<source-file src="src/android/ExtractZipFilePlugin.java" target-dir="src/co/geomati/extractzipfile/" />
-		<config-file target="res/xml/config.xml" parent="plugins">
+		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="ExtractZipFilePlugin">
 				<param name="android-package" value="co.geomati.extractzipfile.ExtractZipFilePlugin"/>
 			</feature>
