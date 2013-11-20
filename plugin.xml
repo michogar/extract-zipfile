@@ -18,7 +18,11 @@ version="0.0.1">
 	
 	<license>GPL v.2</license>
 	
-	<asset src="www/extract-zipfile.js" target="plugins/extract-zipfile.js" />
+	<asset src="www/ExtractZipFile.js" target="plugins/ExtractZipFile.js" />
+	
+	<js-module src="www/ExtractZipFilePlugin.js" name="ExtractZipFilePlugin">
+        <clobbers target="window.ExtractZipFilePlugin" />
+    </js-module>
 	
 	<platform name="android">
 		<source-file src="src/android/ExtractZipFilePlugin.java" target-dir="src/co/geomati/extractzipfile/" />
