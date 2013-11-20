@@ -7,7 +7,7 @@ version="0.0.1">
 	<engines>
 		<engine name="cordova" version=">=3.0.0" />
 	</engines>
-	<name>extract-ZIPFile</name>
+	<name>ExtractZipFilePlugin</name>
 	<description>Receives a ZIP file, extracts it and returns the path of the folder</description>
 	<author>info@geomati.co</author>
 	<keywords>ZIP</keywords>
