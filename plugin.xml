@@ -7,27 +7,21 @@ version="0.0.1">
 	<engines>
 		<engine name="cordova" version=">=3.0.0" />
 	</engines>
-	
 	<name>extract-ZIPFile</name>
-	
 	<description>Receives a ZIP file, extracts it and returns the path of the folder</description>
-	
 	<author>info@geomati.co</author>
-	
 	<keywords>ZIP</keywords>
-	
 	<license>GPL v.2</license>
-	
 	<asset src="www/ExtractZipFilePlugin.js" target="plugins/ExtractZipFilePlugin.js" />
-	
 	<js-module src="www/ExtractZipFilePlugin.js" name="ExtractZipFilePlugin">
-        <clobbers target="ExtractZipFilePlugin" />
-    </js-module>
-	
+		<clobbers target="ExtractZipFilePlugin" />
+	</js-module>
 	<platform name="android">
 		<source-file src="src/android/ExtractZipFilePlugin.java" target-dir="src/co/geomati/extractzipfile/" />
 		<config-file target="res/xml/config.xml" parent="plugins">
-			<plugin name="ExtractZipFilePlugin" value="co.geomati.extractzipfile.ExtractZipFilePlugin"/>
+			<feature name="ExtractZipFilePlugin">
+				<param name="android-package" value="co.geomati.extractzipfile.ExtractZipFilePlugin"/>
+			</feature>
 		</config-file>
 	</platform>
 
