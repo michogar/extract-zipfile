@@ -11,4 +11,6 @@ var ExtractZipFilePlugin = function() {
 
 ExtractZipFilePlugin.prototype.extractFile = function(file, successCallback, errorCallback) {
 	cordova.exec(successCallback, errorCallback, "ExtractZIP", "unzip", [file]);
-}; 
+};
+
+//module.exports = Position;
