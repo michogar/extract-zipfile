@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+id="co.geomati.extractzipfile"
+version="0.0.1">
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+	<name>extract-ZIPFile</name>
+	
+	<description>Receives a ZIP file, extracts it and returns the path of the folder</description>
+	
+	<author>info@geomati.co</author>
+	
+	<keywords>ZIP</keywords>
+	
+	<license>GPL v.2</license>
+	
+	<asset src="www/extract-zipfile.js" target="plugins/extract-zipfile.js" />
+	
+	<platform name="android">
+		<source-file src="src/co/geomati/extractzipfile/extractZipfile.java" target-dir="src/co/geomati/extractzipfile/" />
+		<config-file target="res/xml/config.xml" parent="plugins">
+			<plugin name="ExtractZIP" value="co.geomati.extractzipfile.ExtractZIP"/>
+		</config-file>
+	</platform>
+
+</plugin>
+
