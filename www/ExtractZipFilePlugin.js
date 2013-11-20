@@ -6,11 +6,13 @@
  Modified to comply with Cordova by: Ran Friedlender
  */
 
+var exec = require('cordova/exec');
+
 var ExtractZipFilePlugin = function() {
 };
 
 ExtractZipFilePlugin.prototype.extractFile = function(file, successCallback, errorCallback) {
-	cordova.exec(successCallback, errorCallback, "ExtractZIP", "unzip", [file]);
+	exec(successCallback, errorCallback, "ExtractZIP", "unzip", [file]);
 };
 
-//module.exports = Position;
+module.exports = ExtractZipFilePlugin;
