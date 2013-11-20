@@ -12,7 +12,7 @@ var ExtractZipFilePlugin = function() {
 };
 
 ExtractZipFilePlugin.prototype.extractFile = function(file, successCallback, errorCallback) {
-	exec(successCallback, errorCallback, "ExtractZIP", "unzip", [file]);
+	exec(successCallback, errorCallback, "ExtractZipFilePlugin", "unzip", [file]);
 };
 
 module.exports = ExtractZipFilePlugin;
