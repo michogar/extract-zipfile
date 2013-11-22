@@ -27,7 +27,10 @@ import org.apache.cordova.PluginResult;
 
 public class ExtractZipFilePlugin extends CordovaPlugin
 {
-    @Override
+    private static final String IMG = "img";
+	private static final String SO = "so";
+
+	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException
     {
         if (action.equals("unzip"))
@@ -45,16 +48,27 @@ public class ExtractZipFilePlugin extends CordovaPlugin
         File file = new File(filename);
         String[] dirToSplit = filename.split(File.separator);
         String dirToInsert = "";
+        String foldername = dirToSplit[dirToSplit.length - 1].substring(0, dirToSplit[dirToSplit.length - 1].lastIndexOf('.'));
 
         for (int i = 0; i < dirToSplit.length - 1; i++)
         {
             dirToInsert += dirToSplit[i] + File.separator;
         }
+        
+        File folder =  new File(dirToInsert + File.separator + foldername);
+        File img = new File(folder + File.separator + IMG);
+        File so = new File(folder + File.separator + SO);
 
         BufferedOutputStream dest = null;
         BufferedInputStream is = null;
         ZipEntry entry;
         ZipFile zipfile;
+        
+        if (!folder.exists()) {
+        	folder.mkdir();
+        	so.mkdir();
+        	img.mkdir();
+        }
 
         try
         {
@@ -67,7 +81,7 @@ public class ExtractZipFilePlugin extends CordovaPlugin
                 is = new BufferedInputStream(zipfile.getInputStream(entry), 8192);
                 int count;
                 byte data[] = new byte[102222];
-                String fileName = dirToInsert + entry.getName();
+                String fileName = folder + File.separator + entry.getName();
                 File outFile = new File(fileName);
 
                 if (entry.isDirectory()) 
