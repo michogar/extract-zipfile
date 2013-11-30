@@ -115,6 +115,6 @@ public class ExtractZipFilePlugin extends CordovaPlugin
             return;
         }
 
-        callbackContext.success(filename);
+        callbackContext.success(folder.getAbsolutePath());
     }
 }
