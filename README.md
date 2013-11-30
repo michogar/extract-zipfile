@@ -14,4 +14,15 @@ Use
 	var ZipClient = new ExtractZipFilePlugin();
 	ZipClient.extractFile(filename, onSuccessCallback, onErrorCallback);
 
+	function onSuccessCallback(filepath) {
+	
+		<... code ...>
+
+	}
+
+	function onErrorCallback(err) {
+	
+		<... code ...>
+
+	}
 
