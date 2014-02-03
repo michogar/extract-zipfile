@@ -29,6 +29,7 @@ public class ExtractZipFilePlugin extends CordovaPlugin
 {
     private static final String IMG = "img";
 	private static final String SO = "so";
+	private static final String AUTOR = "autor";
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException
@@ -58,6 +59,7 @@ public class ExtractZipFilePlugin extends CordovaPlugin
         File folder =  new File(dirToInsert + File.separator + foldername);
         File img = new File(folder + File.separator + IMG);
         File so = new File(folder + File.separator + SO);
+        File autor = new File(folder + File.separator + AUTOR);
 
         BufferedOutputStream dest = null;
         BufferedInputStream is = null;
@@ -68,6 +70,7 @@ public class ExtractZipFilePlugin extends CordovaPlugin
         	folder.mkdir();
         	so.mkdir();
         	img.mkdir();
+        	autor.mkdir();
         }
 
         try
