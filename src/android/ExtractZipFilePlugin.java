@@ -106,6 +106,8 @@ public class ExtractZipFilePlugin extends CordovaPlugin
                     is.close();
                   }
             }
+            zipfile.close();
+            file.delete();
         }
         catch (ZipException e1)
         {
